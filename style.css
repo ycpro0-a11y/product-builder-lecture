@@ -5,6 +5,9 @@
     --text-color: #333;
     --container-bg: #fff;
     --shadow: rgba(0, 0, 0, 0.1);
+    --input-bg: #fff;
+    --input-border: #ddd;
+    --divider: #eee;
 }
 
 body.dark-mode {
@@ -12,6 +15,9 @@ body.dark-mode {
     --text-color: #f0f2f5;
     --container-bg: #2d2d2d;
     --shadow: rgba(0, 0, 0, 0.5);
+    --input-bg: #3d3d3d;
+    --input-border: #555;
+    --divider: #444;
 }
 
 body {
@@ -41,6 +47,8 @@ body.dark-mode {
     max-width: 400px;
     transition: background-color 0.3s, box-shadow 0.3s;
     position: relative;
+    max-height: 90vh;
+    overflow-y: auto;
 }
 
 .theme-toggle {
@@ -105,6 +113,7 @@ h1 {
     cursor: pointer;
     transition: background-color 0.3s, transform 0.2s;
     box-shadow: 0 4px 15px var(--shadow);
+    margin-bottom: 1rem;
 }
 
 .generate-btn:hover {
@@ -114,4 +123,64 @@ h1 {
 
 .generate-btn:active {
     transform: translateY(0);
+}
+
+.divider {
+    border: none;
+    border-top: 1px solid var(--divider);
+    margin: 1.5rem 0;
+}
+
+.contact-section h2 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: var(--text-color);
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid var(--input-border);
+    border-radius: 8px;
+    background-color: var(--input-bg);
+    color: var(--text-color);
+    font-family: inherit;
+    box-sizing: border-box;
+    transition: border-color 0.2s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.form-group textarea {
+    height: 80px;
+    resize: vertical;
+}
+
+.submit-btn {
+    width: 100%;
+    background-color: var(--secondary-color);
+    color: #fff;
+    border: none;
+    padding: 0.8rem;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.submit-btn:hover {
+    filter: brightness(1.1);
+}
+
+.submit-btn:active {
+    transform: scale(0.98);
 }
