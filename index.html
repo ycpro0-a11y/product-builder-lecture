@@ -1,59 +1,88 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lotto Number Generator</title>
+    <title>로또 번호 생성기 - 행운의 숫자를 찾아보세요</title>
+    <meta name="description" content="무작위 알고리즘을 활용한 로또 번호 자동 생성기입니다. 당신의 행운을 테스트하고 매주 당첨 번호 통계 정보를 확인하세요.">
     <meta name="google-adsense-account" content="ca-pub-5020632671912971">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5020632671912971" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <div class="theme-toggle">
-            <button id="theme-toggle-btn" aria-label="Toggle dark mode">🌙</button>
+    <header>
+        <nav class="nav-container">
+            <a href="index.html" class="logo">🍀 Lotto Luck</a>
+            <div class="nav-links">
+                <a href="#generator">생성기</a>
+                <a href="#how-to-use">사용법</a>
+                <a href="#privacy">개인정보처리방침</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <div class="container" id="generator">
+            <div class="theme-toggle">
+                <button id="theme-toggle-btn" aria-label="다크 모드 전환">🌙</button>
+            </div>
+            <h1>로또 번호 생성기</h1>
+            <p class="subtitle">오늘의 행운을 무작위 숫자로 점쳐보세요.</p>
+            
+            <div class="numbers"></div>
+            <button class="generate-btn">오늘의 번호 생성하기</button>
+
+            <hr class="divider">
+
+            <section id="how-to-use" class="info-section">
+                <h2>로또 번호 생성기 사용법</h2>
+                <p>본 생성기는 암호학적으로 안전한 무작위 추출 방식을 지향합니다. 중복되지 않는 1부터 45 사이의 숫자 6개를 공정하게 추출하여 제공합니다.</p>
+                <ul>
+                    <li><strong>자동 생성:</strong> '오늘의 번호 생성하기' 버튼을 클릭하세요.</li>
+                    <li><strong>통계 활용:</strong> 무작위 추출은 모든 숫자가 동일한 확률을 가집니다.</li>
+                    <li><strong>저장 기능:</strong> 생성된 번호를 기록하여 나만의 번호로 관리해보세요.</li>
+                </ul>
+            </section>
+
+            <hr class="divider">
+
+            <div class="contact-section">
+                <h2>제휴 및 서비스 문의</h2>
+                <form action="https://formspree.io/f/xojkeely" method="POST">
+                    <div class="form-group">
+                        <input type="email" name="email" placeholder="답변받을 이메일 주소" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea name="message" placeholder="문의 사항을 자세히 적어주세요" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">문의 보내기</button>
+                </form>
+            </div>
+
+            <hr class="divider">
+
+            <div id="disqus_thread"></div>
+            <script>
+                (function() {
+                var d = document, s = d.createElement('script');
+                s.src = 'https://productbuilder-rfafcjnwjt.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+                })();
+            </script>
         </div>
-        <h1>Lotto Number Generator</h1>
-        <div class="numbers"></div>
-        <button class="generate-btn">Generate Numbers</button>
+    </main>
 
-        <hr class="divider">
-
-        <div class="contact-section">
-            <h2>제휴 문의</h2>
-            <form action="https://formspree.io/f/xojkeely" method="POST">
-                <div class="form-group">
-                    <input type="email" name="email" placeholder="이메일 주소" required>
-                </div>
-                <div class="form-group">
-                    <textarea name="message" placeholder="문의 내용을 입력해 주세요" required></textarea>
-                </div>
-                <button type="submit" class="submit-btn">문의 보내기</button>
-            </form>
+    <footer>
+        <div class="footer-container">
+            <p>&copy; 2026 Lotto Luck. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="privacy.html" id="privacy">개인정보처리방침</a>
+                <a href="mailto:contact@example.com">이메일 문의</a>
+            </div>
         </div>
+    </footer>
 
-        <hr class="divider">
-
-        <div id="disqus_thread"></div>
-        <script>
-            /**
-            *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-            *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
-            /*
-            var disqus_config = function () {
-            this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-            this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-            };
-            */
-            (function() { // DON'T EDIT BELOW THIS LINE
-            var d = document, s = d.createElement('script');
-            s.src = 'https://productbuilder-rfafcjnwjt.disqus.com/embed.js';
-            s.setAttribute('data-timestamp', +new Date());
-            (d.head || d.body).appendChild(s);
-            })();
-        </script>
-        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-    </div>
     <script src="main.js"></script>
 </body>
 </html>
