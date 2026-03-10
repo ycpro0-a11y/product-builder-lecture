@@ -3,7 +3,15 @@
     --secondary-color: #2ecc71;
     --background-color: #f0f2f5;
     --text-color: #333;
-    --white: #fff;
+    --container-bg: #fff;
+    --shadow: rgba(0, 0, 0, 0.1);
+}
+
+body.dark-mode {
+    --background-color: #1a1a1a;
+    --text-color: #f0f2f5;
+    --container-bg: #2d2d2d;
+    --shadow: rgba(0, 0, 0, 0.5);
 }
 
 body {
@@ -15,17 +23,48 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
+    transition: background-color 0.3s, color 0.3s;
     background-image: linear-gradient(to right top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);
 }
 
+body.dark-mode {
+    background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);
+}
+
 .container {
-    background-color: var(--white);
+    background-color: var(--container-bg);
     padding: 2rem;
     border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 30px var(--shadow);
     text-align: center;
     width: 90%;
     max-width: 400px;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    position: relative;
+}
+
+.theme-toggle {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+#theme-toggle-btn {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 50%;
+    transition: background-color 0.2s;
+}
+
+#theme-toggle-btn:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+body.dark-mode #theme-toggle-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
 h1 {
@@ -44,7 +83,7 @@ h1 {
 
 .number {
     background-color: var(--secondary-color);
-    color: var(--white);
+    color: #fff;
     width: 50px;
     height: 50px;
     border-radius: 50%;
@@ -53,23 +92,23 @@ h1 {
     align-items: center;
     font-size: 1.5rem;
     font-weight: bold;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 10px var(--shadow);
 }
 
 .generate-btn {
     background-color: var(--primary-color);
-    color: var(--white);
+    color: #fff;
     border: none;
     padding: 1rem 2rem;
     font-size: 1.2rem;
     border-radius: 10px;
     cursor: pointer;
     transition: background-color 0.3s, transform 0.2s;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 15px var(--shadow);
 }
 
 .generate-btn:hover {
-    background-color: #2980b9;
+    filter: brightness(1.1);
     transform: translateY(-2px);
 }
 
