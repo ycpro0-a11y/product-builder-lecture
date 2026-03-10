@@ -13,16 +13,55 @@ if (savedTheme === 'dark') {
 // Theme Toggle Logic
 themeToggleBtn.addEventListener('click', () => {
     body.classList.toggle('dark-mode');
-    
+
+    let theme;
     if (body.classList.contains('dark-mode')) {
+        theme = 'dark';
         localStorage.setItem('theme', 'dark');
         themeToggleBtn.textContent = '☀️';
     } else {
+        theme = 'light';
         localStorage.setItem('theme', 'light');
         themeToggleBtn.textContent = '🌙';
     }
-});
 
+    // Reset Disqus to reflect theme change
+    if (typeof DISQUS !== 'undefined') {
+        DISQUS.reset({
+            reload: true,
+            config: function () {
+                this.page.identifier = window.location.href;
+                this.page.url = window.location.href;
+            }
+        });
+    }
+});  Ely, the updated code:
+// Theme Toggle Logic
+themeToggleBtn.addEventListener('click', () => {
+    body.classList.toggle('dark-mode');
+
+    let theme;
+    if (body.classList.contains('dark-mode')) {
+        theme = 'dark';
+        localStorage.setItem('theme', 'dark');
+        themeToggleBtn.textContent = '☀️';
+    } else {
+        theme = 'light';
+        localStorage.setItem('theme', 'light');
+        themeToggleBtn.textContent = '🌙';
+    }
+
+    // Reset Disqus to reflect theme change
+    if (typeof DISQUS !== 'undefined') {
+        DISQUS.reset({
+            reload: true,
+            config: function () {
+                this.page.identifier = window.location.href;
+                this.page.url = window.location.href;
+            }
+        });
+    }
+}); 
 // Lotto Generation Logic
 generateBtn.addEventListener('click', () => {
     const lottoNumbers = new Set();
