@@ -21,17 +21,6 @@ themeToggleBtn.addEventListener('click', () => {
         localStorage.setItem('theme', 'light');
         themeToggleBtn.textContent = '🌙';
     }
-
-    // Reset Disqus to reflect theme change
-    if (typeof DISQUS !== 'undefined') {
-        DISQUS.reset({
-            reload: true,
-            config: function () {
-                this.page.identifier = window.location.href;
-                this.page.url = window.location.href;
-            }
-        });
-    }
 });
 
 // Lotto Generation Logic
