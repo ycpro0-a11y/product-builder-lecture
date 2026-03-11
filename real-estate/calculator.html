@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>합격 예측 점수 계산기 - Real Estate Exam Guide</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav class="container nav-container">
+            <a href="index.html" class="logo">🏠 Exam Guide</a>
+            <div class="nav-links">
+                <a href="index.html">홈</a>
+                <a href="calculator.html">합격 계산기</a>
+                <a href="subjects.html">과목 정보</a>
+                <a href="qna.html">자주 묻는 질문</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container" style="margin-top: 2rem;">
+        <div class="card" style="max-width: 700px; margin: 0 auto;">
+            <h1 style="font-size: 1.8rem; color: var(--primary); margin-bottom: 0.5rem;">📊 공인중개사 합격 예측 계산기</h1>
+            <p style="color: var(--text-muted); margin-bottom: 2rem;">과목별 점수를 입력하여 1차 및 2차 합격 여부를 즉시 확인하세요.</p>
+
+            <div class="calc-section">
+                <div class="calc-group">
+                    <h2 style="font-size: 1.2rem; color: var(--primary); margin-bottom: 1rem; border-bottom: 2px solid var(--secondary); display: inline-block;">1차 시험</h2>
+                    <div class="input-row">
+                        <label for="m1">부동산학개론</label>
+                        <input type="number" id="m1" placeholder="0" min="0" max="100">
+                        <span>점</span>
+                    </div>
+                    <div class="input-row">
+                        <label for="m2">민법 및 민사특별법</label>
+                        <input type="number" id="m2" placeholder="0" min="0" max="100">
+                        <span>점</span>
+                    </div>
+                </div>
+
+                <div class="calc-group" style="margin-top: 2rem;">
+                    <h2 style="font-size: 1.2rem; color: var(--primary); margin-bottom: 1rem; border-bottom: 2px solid var(--secondary); display: inline-block;">2차 시험</h2>
+                    <div class="input-row">
+                        <label for="s1">공인중개사법/중개실무</label>
+                        <input type="number" id="s1" placeholder="0" min="0" max="100">
+                        <span>점</span>
+                    </div>
+                    <div class="input-row">
+                        <label for="s2">부동산공법</label>
+                        <input type="number" id="s2" placeholder="0" min="0" max="100">
+                        <span>점</span>
+                    </div>
+                    <div class="input-row">
+                        <label for="s3">부동산공시법 및 세법</label>
+                        <input type="number" id="s3" placeholder="0" min="0" max="100">
+                        <span>점</span>
+                    </div>
+                </div>
+
+                <button id="run-calc" class="calc-btn" style="margin-top: 2rem; font-size: 1.1rem;">결과 확인하기</button>
+            </div>
+
+            <div id="calc-results" class="card" style="display: none; margin-top: 2rem; border: 1px solid #e2e8f0; background: #fff;">
+                <!-- Result will be injected here by main.js -->
+            </div>
+        </div>
+
+        <section class="card" style="max-width: 700px; margin: 2rem auto;">
+            <h3>ℹ️ 합격 기준 안내</h3>
+            <ul style="padding-left: 20px; font-size: 0.9rem; color: var(--text-muted);">
+                <li><strong>평균 합격:</strong> 각 차수별로 모든 과목 평균이 60점 이상이어야 합니다.</li>
+                <li><strong>과락 주의:</strong> 단 한 과목이라도 40점 미만이면 평균이 높아도 불합격 처리됩니다.</li>
+                <li>1차 시험에 불합격하면 2차 시험 점수와 상관없이 불합격 처리됩니다.</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Real Estate Exam Guide. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>
