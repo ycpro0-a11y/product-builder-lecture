@@ -31,7 +31,23 @@
             <section id="generator">
                 <h1>로또 번호 생성기</h1>
                 <p class="subtitle">엄격한 난수 알고리즘을 통한 행운의 숫자 조합</p>
-                
+
+                <div class="advanced-options">
+                    <details>
+                        <summary>⚙️ 고급 설정 (포함/제외 숫자)</summary>
+                        <div class="options-grid">
+                            <div class="option-item">
+                                <label for="include-nums">꼭 포함할 숫자 (쉼표로 구분)</label>
+                                <input type="text" id="include-nums" placeholder="예: 7, 21">
+                            </div>
+                            <div class="option-item">
+                                <label for="exclude-nums">제외할 숫자 (쉼표로 구분)</label>
+                                <input type="text" id="exclude-nums" placeholder="예: 1, 45">
+                            </div>
+                        </div>
+                    </details>
+                </div>
+
                 <div class="numbers">
                     <!-- Numbers will be generated here -->
                 </div>
@@ -40,16 +56,24 @@
 
             <hr class="divider">
 
-            <section class="content-preview">
-                <div class="info-card">
+            <section class="interactive-tools">
+                <div class="tool-card tax-calculator">
+                    <h3>💰 실시간 당첨금 세금 계산기</h3>
+                    <p>당첨금을 입력하면 실수령액을 즉시 계산합니다.</p>
+                    <div class="calc-input-group">
+                        <input type="number" id="prize-amount" placeholder="당첨 금액 입력 (원)" min="0" step="10000">
+                        <span class="unit">원</span>
+                    </div>
+                    <div id="tax-result" class="result-display">
+                        <div class="result-row"><span>세금 합계:</span> <span id="total-tax">0원</span></div>
+                        <div class="result-row total"><span>최종 실수령액:</span> <span id="net-payout">0원</span></div>
+                    </div>
+                </div>
+
+                <div class="tool-card info-card">
                     <h3>📊 통계 기반 분석</h3>
                     <p>매주 업데이트되는 당첨 번호 데이터를 분석하여 빈출 숫자를 확인하세요.</p>
-                    <a href="guide.html#stats" class="read-more">자세히 보기</a>
-                </div>
-                <div class="info-card">
-                    <h3>💰 당첨금 세금 계산</h3>
-                    <p>1등 당첨 시 실제로 수령하게 되는 금액은 얼마일까요? 세금 계산기를 확인해보세요.</p>
-                    <a href="guide.html#tax" class="read-more">계산해보기</a>
+                    <a href="guide.html#stats" class="read-more">통계 가이드 보기</a>
                 </div>
             </section>
 

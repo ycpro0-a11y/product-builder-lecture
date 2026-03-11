@@ -211,3 +211,126 @@ footer {
     .container { padding: 2rem 1.5rem; }
     h1 { font-size: 2rem; }
 }
+
+/* Advanced Options Style */
+.advanced-options {
+    margin-bottom: 2rem;
+    text-align: left;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.advanced-options summary {
+    cursor: pointer;
+    font-weight: 600;
+    padding: 10px;
+    background: var(--divider);
+    border-radius: 8px;
+    margin-bottom: 10px;
+    list-style: none;
+    transition: background 0.3s ease;
+}
+
+.advanced-options summary:hover {
+    background: #e2e8f0;
+}
+
+body.dark-mode .advanced-options summary:hover {
+    background: #334155;
+}
+
+.options-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    padding: 15px;
+    background: var(--divider);
+    border-radius: 0 0 8px 8px;
+    margin-top: -10px;
+}
+
+.option-item label {
+    display: block;
+    font-size: 0.8rem;
+    margin-bottom: 5px;
+    color: var(--text-color);
+}
+
+.option-item input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    background-color: var(--input-bg);
+    color: var(--text-color);
+}
+
+/* Tax Calculator Tool Card */
+.interactive-tools {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 20px;
+    margin: 2rem 0;
+}
+
+.tool-card {
+    background: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    text-align: left;
+    border: 1px solid var(--divider);
+}
+
+.calc-input-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 1.5rem 0;
+}
+
+.calc-input-group input {
+    flex: 1;
+    padding: 12px;
+    border: 2px solid var(--primary-color);
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    background-color: var(--input-bg);
+    color: var(--text-color);
+}
+
+.unit { font-weight: bold; color: var(--text-color); }
+
+.result-display {
+    background: var(--divider);
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+.result-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+}
+
+.result-row.total {
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid var(--divider);
+    font-weight: bold;
+    color: var(--primary-color);
+    font-size: 1.2rem;
+}
+
+@media (max-width: 768px) {
+    .interactive-tools {
+        grid-template-columns: 1fr;
+    }
+    .options-grid {
+        grid-template-columns: 1fr;
+    }
+}
